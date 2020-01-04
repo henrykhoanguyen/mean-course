@@ -1,0 +1,7 @@
+<mat-card>
+  <mat-form-field>
+    <textarea matInput [(ngModel)]="enteredValue"></textarea>
+  </mat-form-field>
+  <button (click)="onAddPost()" color="primary" mat-raised-button>Save Post</button>
+</mat-card>
+<p>{{ newPost }}</p>
