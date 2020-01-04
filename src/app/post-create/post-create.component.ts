@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, EventEmitter, Output } from "@angular/core";
+import { Post } from "../post.model";
 
 @Component({
   selector: "app-post-create",
@@ -6,14 +7,20 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./post-create.component.css"]
 })
 export class PostCreateComponent implements OnInit {
-  private newPost = "No context";
-  private enteredValue;
+  private enteredContent = "";
+  private enteredTitle = "";
+  @Output() postCreated = new EventEmitter<Post>();
 
   constructor() {}
 
   ngOnInit() {}
 
   onAddPost() {
-    this.newPost = "The user's Post";
+    const post: Post = {
+      title: this.enteredTitle,
+      content: this.enteredContent
+    };
+
+    this.postCreated.emit(post);
   }
 }
