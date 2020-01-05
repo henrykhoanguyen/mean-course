@@ -2,4 +2,5 @@
 mat-form-field,
 text-area {
   width: 100%;
+  margin-bottom: 2rem;
 }
